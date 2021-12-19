@@ -61,11 +61,7 @@ final class MVCSearchViewController: UIViewController {
 extension MVCSearchViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    let vc = UIStoryboard.init(name: "Web", bundle: nil).instantiateInitialViewController() as! WebViewController
-    vc.urlStr = items[indexPath.item].urlStr
-
-    let nav = self.navigationController
-    nav?.pushViewController(vc, animated: true)
+    Router.shared.showWeb(from: self, githubRepository: items[indexPath.row])
   }
 }
 

@@ -22,9 +22,12 @@ final class Router {
     self.window = window
   }
 
-  func showWeb(from: UIViewController) {
-    guard let vc = UIStoryboard.init(name: "Web", bundle: nil).instantiateInitialViewController() else { return }
-    show(from: from, next: vc)
+  func showWeb(from: UIViewController, githubRepository: GithubRepository) {
+    guard let webVC = UIStoryboard.init(name: "Web", bundle: nil).instantiateInitialViewController() as? WebViewController else {
+      return
+    }
+    webVC.configure(githubRepository: githubRepository)
+    show(from: from, next: webVC)
   }
 }
 

@@ -15,15 +15,22 @@ import WebKit
  */
 final class WebViewController: UIViewController {
 
-  @IBOutlet weak var webView: WKWebView!
+  @IBOutlet private weak var webView: WKWebView!
 
-  var urlStr: String?
+  private var githubRepository: GithubRepository?
+
+  func configure(githubRepository: GithubRepository) {
+    self.githubRepository = githubRepository
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let url = URL(string: urlStr!)!
-    let request = URLRequest(url: url)
-    webView.load(request)
+    guard
+      let githubRepository = githubRepository,
+      let url = URL(string: githubRepository.urlStr) else {
+      return
+    }
+    webView.load(URLRequest(url: url))
   }
 }

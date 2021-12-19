@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		30B2CBAC276F13830007F62C /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2CBAB276F13830007F62C /* GithubRepository.swift */; };
+		30B2CBAF276F16300007F62C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2CBAE276F16300007F62C /* Router.swift */; };
+		30B2CBB1276F200E0007F62C /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2CBB0276F200E0007F62C /* GithubAPI.swift */; };
 		B6030F2325F8CBFD004027AC /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6030F2125F8CBFD004027AC /* Web.storyboard */; };
 		B6030F2425F8CBFD004027AC /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6030F2225F8CBFD004027AC /* WebViewController.swift */; };
 		B68AF84B25F855AC0067086D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF84A25F855AC0067086D /* AppDelegate.swift */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		30B2CBAB276F13830007F62C /* GithubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepository.swift; sourceTree = "<group>"; };
+		30B2CBAE276F16300007F62C /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		30B2CBB0276F200E0007F62C /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
 		B6030F2125F8CBFD004027AC /* Web.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
 		B6030F2225F8CBFD004027AC /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		B68AF84725F855AC0067086D /* TaskMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,9 +57,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		30B2CBAD276F161B0007F62C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				30B2CBAE276F16300007F62C /* Router.swift */,
+				30B2CBB0276F200E0007F62C /* GithubAPI.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		B6030F1D25F8CB92004027AC /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				30B2CBAD276F161B0007F62C /* Utility */,
 				30B2CBAA276F13230007F62C /* Model */,
 				B68AF87F25F8A47F0067086D /* Controller */,
 				B68AF86925F856510067086D /* View */,
@@ -203,6 +217,8 @@
 				B68AF84B25F855AC0067086D /* AppDelegate.swift in Sources */,
 				30B2CBAC276F13830007F62C /* GithubRepository.swift in Sources */,
 				B68AF88225F8A47F0067086D /* MVCSearchViewController.swift in Sources */,
+				30B2CBAF276F16300007F62C /* Router.swift in Sources */,
+				30B2CBB1276F200E0007F62C /* GithubAPI.swift in Sources */,
 				B6030F2425F8CBFD004027AC /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

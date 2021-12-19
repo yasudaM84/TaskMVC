@@ -24,5 +24,10 @@ final class MVCTableViewCell: UITableViewCell {
     titleLabel.text = nil
     urlLabel.text = nil
   }
+
+  func configure(item: GithubRepository) {
+    titleLabel.text = item.fullName
+    urlLabel.text = item.urlStr
+  }
 }
 

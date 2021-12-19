@@ -16,7 +16,7 @@ import UIKit
  画面遷移の処理が直接ViewControllerに書かれています
  修正してMVCにしてください
 */
-final class MVCSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+final class MVCSearchViewController: UIViewController {
 
   @IBOutlet weak var searchTextField: UITextField!
   @IBOutlet weak var searchButton: UIButton! {
@@ -56,7 +56,9 @@ final class MVCSearchViewController: UIViewController, UITableViewDelegate, UITa
       }
     }
   }
+}
 
+extension MVCSearchViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     let vc = UIStoryboard.init(name: "Web", bundle: nil).instantiateInitialViewController() as! WebViewController
@@ -65,7 +67,9 @@ final class MVCSearchViewController: UIViewController, UITableViewDelegate, UITa
     let nav = self.navigationController
     nav?.pushViewController(vc, animated: true)
   }
+}
 
+extension MVCSearchViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     items.count
   }

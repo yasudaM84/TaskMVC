@@ -18,16 +18,16 @@ import UIKit
 */
 final class MVCSearchViewController: UIViewController {
 
-  @IBOutlet weak var searchTextField: UITextField!
-  @IBOutlet weak var searchButton: UIButton! {
+  @IBOutlet private weak var searchTextField: UITextField!
+  @IBOutlet private weak var searchButton: UIButton! {
     didSet {
       searchButton.addTarget(self, action: #selector(tapSearchButton(_sender:)), for: .touchUpInside)
     }
   }
 
-  @IBOutlet weak var indicator: UIActivityIndicatorView!
+  @IBOutlet private weak var indicator: UIActivityIndicatorView!
 
-  @IBOutlet weak var tableView: UITableView! {
+  @IBOutlet private weak var tableView: UITableView! {
     didSet {
       tableView.register(UINib.init(nibName: MVCTableViewCell.className, bundle: nil), forCellReuseIdentifier: MVCTableViewCell.className)
       tableView.delegate = self
@@ -35,7 +35,7 @@ final class MVCSearchViewController: UIViewController {
     }
   }
 
-  var items: [GithubRepository] = []
+  private var items: [GithubRepository] = []
 
   override func viewDidLoad() {
     super.viewDidLoad()

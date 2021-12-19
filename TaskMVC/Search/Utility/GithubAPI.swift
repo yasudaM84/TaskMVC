@@ -13,7 +13,6 @@ final class GithubAPI {
   private init() {}
 
   func getRepositories(searchWord: String, completion: (([GithubRepository]) -> Void)? = nil) {
-
     let url: URL = URL(string: "https://api.github.com/search/repositories?q=\(searchWord)&sort=stars")!
     let task: URLSessionTask = URLSession.shared.dataTask(with: url, completionHandler: {(data, response, error) in
       guard let data = data,

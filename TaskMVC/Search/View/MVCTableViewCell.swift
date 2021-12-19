@@ -16,8 +16,8 @@ final class MVCTableViewCell: UITableViewCell {
 
   static var className: String { String(describing: MVCTableViewCell.self) }
 
-  @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var urlLabel: UILabel!
+  @IBOutlet private weak var titleLabel: UILabel!
+  @IBOutlet private weak var urlLabel: UILabel!
 
   override func prepareForReuse() {
     super.prepareForReuse()
